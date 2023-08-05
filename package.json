@@ -1,0 +1,11 @@
+{
+  "name": "templates",
+  "version": "1.0.0",
+  "description": "Front-end project templates such as config files, project templates, and so on",
+  "main": "index.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "liuyun",
+  "license": "MIT"
+}
