@@ -23,6 +23,10 @@ module.exports = [
       "vue2.js": ".eslintrc.js",
       _eslintignore: ".eslintignore",
     },
+    // 需要执行的命令，以hook的形式
+    commands:{
+    
+    }
   },
   {
     title: "适用 vuu3 项目",
