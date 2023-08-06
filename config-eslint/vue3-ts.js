@@ -1,23 +1,23 @@
 // @see https://github.com/element-plus/element-plus/blob/dev/internal/eslint-config/index.js
 
 module.exports = {
+  root:true,
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    // ecmaVersion: 'latest',
-    // sourceType: 'module',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
     // // ？？仅允许 import export 语句出现在模块的顶层
-    // allowImportExportEverywhere: false,
-    // ecmaFeatures: {
-    //   // 不允许 return 语句出现在 global 环境下
-    //   globalReturn: false,
-    //   // 开启全局严格模式
-    //   impliedStrict: true,
-    //   jsx: true,
-    // },
+    allowImportExportEverywhere: false,
+    ecmaFeatures: {
+      // 不允许 return 语句出现在 global 环境下
+      globalReturn: false,
+      // 开启全局严格模式
+      impliedStrict: true,
+      jsx: true,
+    },
   },
   extends: [
-    './index.js',
     // ESLint 内置规则，推荐用来检查常规的 JavaScript 代码
     'eslint:recommended',
     // 插件：eslint-plugin-import：用于检查 ES6 的模块导入和导出语句
@@ -34,6 +34,68 @@ module.exports = {
   ],
   // 对不同类型的文件，指定更加具体的解析器和规则
   overrides: [
+    // 所有json 文件使用jsonc-eslint-parser解析器
+    {
+      files: ['*.json'],
+      parser: 'jsonc-eslint-parser',
+    },
+    // 对package.json 文件属性进行排序
+    {
+      files: ['package.json'],
+      parser: 'jsonc-eslint-parser',
+      rules: {
+        'jsonc/sort-keys': [
+          'error',
+          {
+            pathPattern: '^$',
+            order: [
+              'name',
+              'version',
+              'private',
+              'packageManager',
+              'description',
+              'type',
+              'keywords',
+              'homepage',
+              'bugs',
+              'license',
+              'author',
+              'contributors',
+              'funding',
+              'files',
+              'main',
+              'module',
+              'exports',
+              'unpkg',
+              'jsdelivr',
+              'browser',
+              'bin',
+              'man',
+              'directories',
+              'repository',
+              'publishConfig',
+              'scripts',
+              'dependencies',
+              'devDependencies',
+              'peerDependencies',
+              'peerDependenciesMeta',
+              'optionalDependencies',
+              'engines',
+              'config',
+              'overrides',
+              'pnpm',
+              'husky',
+              'lint-staged',
+              'eslintConfig',
+            ],
+          },
+          {
+            pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
+            order: { type: 'asc' },
+          },
+        ],
+      },
+    },
     {
       files: ['*.d.ts'],
       rules: {

@@ -1,10 +1,11 @@
 // @see https://github.com/element-plus/element-plus/blob/dev/internal/eslint-config/index.js
 
 module.exports = {
-  parser: 'vue-eslint-parser',
+  root:true,
+  // parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    // sourceType: 'module',
     // ？？仅允许 import export 语句出现在模块的顶层
     allowImportExportEverywhere: false,
     ecmaFeatures: {
@@ -107,14 +108,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   files: ['*.d.ts'],
-    //   rules: {
-    //     'import/no-duplicates': 'warn',
-    //     '@typescript-eslint/ban-types': 'warn',
-    //     '@typescript-eslint/no-explicit-any': 'warn',
-    //   },
-    // },
   ],
 
   /**
