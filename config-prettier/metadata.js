@@ -18,5 +18,10 @@ module.exports = [
       "default.js": ".prettierrc.js",
       prettierignore: ".prettierignore",
     },
+    hooks:{
+      afterInstall(shell, pwd){
+        shell.exec('npm pkg set scripts.format "prettier --write ."')
+      }
+    }
   },
 ];
