@@ -20,7 +20,7 @@ module.exports = [
     },
     hooks:{
       afterInstall(shell, pwd){
-        shell.exec('npm pkg set scripts.format "prettier --write ."')
+        shell.exec('npm pkg set scripts.format="prettier --write ."')
       }
     }
   },
