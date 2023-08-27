@@ -73,7 +73,7 @@ module.exports = {
     aiNumber: 1,
     themeColorCode: '',
     // 预设 commit 涉及范围，一种是根据代码层面区分，比如monorepo，一种是业务区分
-    // scopes: [{ name: 'basic', value: 'basic' }, ...pkgs1, ...pkgs2],
+    scopes: [{ name: 'basic', value: 'basic' }, {name:'config',value:'config'},{name:'utils',value:'utils'},{name:'project',value: 'project'}],
     // 默认 scopes 范围列表的模糊搜索针对列表 name 字段。设置为 true 后针对列表 value 字段
     scopesSearchValue: false,
     allowCustomScopes: true,

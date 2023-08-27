@@ -4,7 +4,7 @@ module.exports = [
     title: '只有 commitlint',
     value: 'commitlint',
     dependencies: {
-      dev: ['@commitlint/cli', '@commitlint/config-conventional'],
+      dev: '@commitlint/cli @commitlint/config-conventional',
     },
     filesMap: {
       'only-commit.js': 'commitlint.config.cjs',
@@ -20,8 +20,8 @@ module.exports = [
     title: 'commitlint + czg',
     value: 'commitlint-czg',
     dependencies: {
-      global: ['czg'],
-      dev: ['@commitlint/cli', '@commitlint/config-conventional'],
+      global: 'czg',
+      dev: '@commitlint/cli @commitlint/config-conventional',
     },
     filesMap: {
       'commit-czg.js': 'commitlint.config.cjs',
@@ -40,9 +40,9 @@ module.exports = [
     // 需要安装的依赖列表
     dependencies: {
       // 全局依赖
-      global: ['czg'],
+      global: 'czg',
       // 开发依赖
-      dev: ['@commitlint/cli', '@commitlint/config-conventional', 'release-it', '@release-it/conventional-changelog'],
+      dev: '@commitlint/cli @commitlint/config-conventional release-it @release-it/conventional-changelog',
       // 生产依赖
       prod: [],
     },

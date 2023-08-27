@@ -5,7 +5,7 @@ module.exports = [
     // 需要安装的依赖列表
     dependencies: {
       // 开发依赖
-      dev: ['lint-staged'],
+      dev: 'lint-staged',
     },
     // 文件映射，格式：source:target
     filesMap: {

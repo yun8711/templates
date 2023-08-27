@@ -5,7 +5,7 @@ module.exports = [
     // 需要安装的依赖列表
     dependencies: {
       // 开发依赖
-      dev: ['husky'],
+      dev: 'husky',
     },
     // 文件映射，格式：source:target
     filesMap: {
@@ -25,7 +25,7 @@ module.exports = [
     value: 'recommended',
     dependencies: {
       // 开发依赖
-      dev: ['husky'],
+      dev: 'husky',
     },
     // 文件映射，格式：source:target
     filesMap: {
