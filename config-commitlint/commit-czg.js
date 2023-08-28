@@ -1,25 +1,18 @@
-// const fs = require('node:fs');
-// const path = require('node:path');
-
-// 可以从workspace 中获取子项目，作为scopes 的选项
-// const pkgs1 = fs.readdirSync(path.resolve(__dirname, 'packages'));
-// const pkgs2 = fs.readdirSync(path.resolve(__dirname, 'configs'));
-
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   // 以下的配置项供czg 使用
   prompt: {
-    // 定义一些常用的git commit message
+    // 定义一些常用的 commit message，使用时：czg :fd
     // alias: {
-    //   b: "docs: fix typos",
-    //   ur: "docs: update README",
-    //   ":": "docs(blog): update posts",
+    // 默认
+    //   fd: "docs: fix typos",
     // },
+    // 自定义命令行提问信息
     messages: {
-      type: '选择你要提交的类型 :',
-      scope: '选择一个提交范围（可选）:',
+      type: '提交类型 :',
+      scope: '提交范围:',
       customScope: '请输入自定义的提交范围 :',
-      subject: '填写简短精炼的变更描述 :\n',
+      subject: '填写简短的变更描述 :\n',
       body: '填写更加详细的变更描述（可选）。使用 "|" 换行 :\n',
       breaking: '列举非兼容性重大的变更（可选）。使用 "|" 换行 :\n',
       footerPrefixesSelect: '选择关联issue前缀（可选）:',
@@ -27,7 +20,7 @@ module.exports = {
       footer: '列举关联issue (可选) 例如: #31, #I3244 :\n',
       confirmCommit: '是否提交或修改commit ?',
     },
-    // 在默认 types 的基础上，添加额外的 types；可以改变原有默认配置，或改变顺序
+    // 自定义选择类型提示
     types: [
       { value: 'feat', name: 'feat:     新功能 | A new feature', emoji: ':sparkles:' },
       { value: 'fix', name: 'fix:      问题修复 | A bug fix', emoji: ':bug:' },
@@ -65,46 +58,71 @@ module.exports = {
         emoji: ':hammer:',
       },
     ],
+    // 在默认 types 的基础上，添加额外的 types
+    typesAppend:[],
     // 默认 types 类别列表的模糊搜索针对列表 value 字段。设置为 false 后针对列表
-    typesSearchValue: true,
+    // typesSearchValue: true,
     // 是否开启 commit message 带有 Emoji 字符
     useEmoji: true,
     // 设置 Emoji 字符 的 位于头部位置 "left" | "center" | "right"
-    emojiAlign: 'center',
-    useAI: false,
-    aiNumber: 1,
-    themeColorCode: '',
-    // 预设 commit 涉及范围，一种是根据代码层面区分，比如monorepo，一种是业务区分
-    // scopes: [{ name: 'basic', value: 'basic' }, ...pkgs1, ...pkgs2],
+    // emojiAlign: 'center',
+    // 终端交互的主题色
+    // themeColorCode: 'cyan',
+    // 预设范围：string[] | Array<{ name: string, value?: string }>
     scopes: [],
+    // 选择了scopes 定义的模块后，命令行显示该scope 对应的模块范围
+    // scopeOverrides: {
+    //   "test": ["e2eTest", "unitTest"]
+    // },
+    // 根据 scope.value 过滤模块范围中的选项
+    // scopeFilters: [".DS_Store"],
     // 默认 scopes 范围列表的模糊搜索针对列表 name 字段。设置为 true 后针对列表 value 字段
-    scopesSearchValue: false,
+    // scope 是否可多选
+    // enableMultipleScopes: false,
+    // 在多选模式下 模块范围 之间的分隔符
+    // scopeEnumSeparator:',',
+    // 是否在选择 模块范围 时显示自定义选项
     allowCustomScopes: true,
-    allowEmptyScopes: true,
+    scopesSearchValue: false,
+    // 是否在选择 模块范围 显示为空选项
+    // allowEmptyScopes: true,
     customScopesAlign: 'bottom',
     customScopesAlias: 'custom',
     emptyScopesAlias: 'empty',
+    // 是否自动将简短描述(subject)第一个字符进行大写处理
     upperCaseSubject: false,
+    // 是否在重大变更时，在头部添加!号
     markBreakingChangeMode: false,
-    allowBreakingChanges: ['feat', 'fix'],
-    breaklineNumber: 100,
-    breaklineChar: '|',
-    skipQuestions: [],
-    issuePrefixes: [{ value: 'closed', name: 'closed:   ISSUES has been processed' }],
+    // 允许出现 重大变更 的特定type
+    allowBreakingChanges: ['feat', 'fix','refactor'],
+    // 详细描述(body)和重大变更(BREAKING CHANGES)中根据字符超过该数值自动换行
+    // breaklineNumber: 100,
+    // 详细描述(body)和重大变更(BREAKING CHANGES)中换行字符
+    // breaklineChar: '|',
+    // 指定的哪些问题不显示:'scope' | 'body' | 'breaking' | 'footerPrefix' | 'footer' | 'confirmCommit'
+    skipQuestions: ['body','footerPrefix','footer','confirmCommit'],
+    // 自定义选择issue前缀
+    // issuePrefixes: [{ value: 'closed', name: 'closed:   ISSUES has been processed' }],
     customIssuePrefixAlign: 'top',
     emptyIssuePrefixAlias: 'skip',
     customIssuePrefixAlias: 'custom',
-    allowCustomIssuePrefix: true,
+    // 是否在选择 ISSUE 前缀 显示自定义选项(custom)
+    // allowCustomIssuePrefix: true,
+    // 是否在选择 ISSUE 前缀 显示为跳过选项(skip)
     allowEmptyIssuePrefix: true,
     confirmColorize: true,
-    maxHeaderLength: Infinity,
-    maxSubjectLength: Infinity,
-    minSubjectLength: 0,
-    scopeOverrides: undefined,
+    // header 最大长度
+    // maxHeaderLength: Infinity,
+    // subject 最大长度,
+    // maxSubjectLength: Infinity,
+    // subject 最小长度
+    // minSubjectLength: 0,
     defaultBody: '',
     defaultIssues: '',
     defaultScope: '',
     defaultSubject: '',
+    // 自定义最终的 message 格式以及输出
+    // formatMessageCB:({ defaultMessage }) => defaultMessage,
     // 英文版
     // messages: {
     //   type: "Select the type of change that you're committing:",

@@ -1,6 +1,10 @@
-# 依赖管理
-# 指定安装源，腾讯的
+# 安装源
+# npm
+# registry=https://registry.npmjs.com
+# 腾讯
 registry=http://mirrors.cloud.tencent.com/npm/
+# cnpm
+# registry=https://registry.npmmirror.com
 
 auto-install-peers=true
 
