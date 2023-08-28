@@ -1,0 +1,16 @@
+ls:
+  # 目录都必须使用 kebab-case 命名
+  .dir: kebab-case
+  # 所有js 文件都必须使用 kebab-case 命名
+  .js: kebab-case
+  # 所有组件使用 PascalCase 命名
+  views/**/components:
+    .dir: kebab-case
+    .vue: PascalCase
+
+# 如果没有指定工作目录，则默认为项目根目录
+ignore:
+  - .git
+  - node_modules
+  - .vscode
+  - .idea
