@@ -1,15 +1,9 @@
 module.exports = [
   {
-    title: '基础配置：只安装 husky',
+    title: '基础配置：仅安装 husky',
     value: 'basic',
-    // 需要安装的依赖列表
     dependencies: {
-      // 开发依赖
       dev: 'husky',
-    },
-    // 文件映射，格式：source:target
-    filesMap: {
-      '_husky-basic': '.husky',
     },
     hooks: {
       beforeInstall: (shell, pwd) => {
@@ -21,13 +15,11 @@ module.exports = [
     },
   },
   {
-    title: '推荐配置：commit-msg，pre-commit',
+    title: '推荐配置：安装husky，增加hook: commit-msg、pre-commit ',
     value: 'recommended',
     dependencies: {
-      // 开发依赖
       dev: 'husky',
     },
-    // 文件映射，格式：source:target
     filesMap: {
       '_husky-ly': '.husky',
     },

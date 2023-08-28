@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title: "适用 vue 项目",
+    title: "基础配置：vue + scss",
     value: "default",
     // 需要安装的依赖列表
     dependencies:{

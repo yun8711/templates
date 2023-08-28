@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title: "适用 vue2 项目",
+    title: "基础配置：适用 vue2",
     value: "vue2",
     // 需要安装的依赖列表
     dependencies:{
@@ -19,7 +19,7 @@ module.exports = [
     }
   },
   {
-    title: "适用 vu3 项目",
+    title: "基础配置：适用 vue3",
     value: "vue3",
     dependencies: {
       dev:'eslint eslint-config-prettier eslint-plugin-jsonc eslint-plugin-prettier eslint-plugin-vue jsonc-eslint-parser prettier',
@@ -35,7 +35,7 @@ module.exports = [
     }
   },
   {
-    title: "适用 vu3+typescript 项目",
+    title: "基础配置：适用 vue3+ts",
     value: "vue3-ts",
     dependencies: {
       dev:'eslint eslint-config-prettier eslint-plugin-import eslint-plugin-jsonc eslint-plugin-prettier eslint-plugin-vue jsonc-eslint-parser prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript'
@@ -50,8 +50,8 @@ module.exports = [
       }
     }
   },
-  {
-    title: "适用 react 项目",
-    value: "react",
-  }
+  // {
+  //   title: "适用 react 项目",
+  //   value: "react",
+  // }
 ];
