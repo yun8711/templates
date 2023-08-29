@@ -1,3 +1,4 @@
+// 代码样式风格，完全看团队约定以及个人喜好
 module.exports = {
   // 一行最多 120 字符
   printWidth: 120,
@@ -40,6 +41,16 @@ module.exports = {
   // 这两个选项可用于格式化以给定字符偏移量（分别包括和不包括）开始和结束的代码 (rangeStart：开始，rangeEnd：结束)
   rangeStart: 0,
   rangeEnd: Infinity,
+  // [2.4+] 指定要使用的解析器，可以自定义解析器
+  overrides: [
+    {
+      "files": "*.ts",
+      "excludeFiles": ["demo/components.d.ts"],
+      "options": {
+        "semi": true
+      }
+    }
+  ],
   // [2.4]弃用 jsx 标签的反尖括号需要换行
   // jsxBracketSameLine: false,
   // [弃用] 指定要使用的解析器，可以自定义解析器

@@ -1,3 +1,4 @@
 # 按需添加
 node_modules
 dist
+public

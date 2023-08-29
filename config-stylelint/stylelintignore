@@ -1,5 +1,20 @@
-/dist/*
-/public/*
-public/
-stats.html
+# mini css
 *.min.css
+
+# other type files
+*.md
+*.js
+*.json
+*.ttf
+*.woff
+*.woff2
+*.svg
+*.png
+*.ico
+*.yaml
+stats.html
+
+# directory
+/test/
+/dist/
+/public/

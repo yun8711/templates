@@ -7,6 +7,7 @@ registry=http://mirrors.cloud.tencent.com/npm/
 # registry=https://registry.npmmirror.com
 
 auto-install-peers=true
+# shamefully-hoist=true
 
 # node 管理
 # 检查包设置时要使用的 Node.js 版本，防止不兼容的依赖项
