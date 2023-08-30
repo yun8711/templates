@@ -1,0 +1,8 @@
+# 所有文件都使用自动文本模式，并将换行符统一转换为LF（Unix风格）格式
+* text=auto eol=lf
+# 某种类型的文件可以被 Linguist 识别，设置为false 则不被识别
+*.vue linguist-detectable=true
+# .png 文件都被视为二进制文件（不需要任何转换）
+*.png binary
+# .md 文件都被视为文本文件，并采用 LF 换行符（而不是默认的 CRLF）
+*.md text eol=lf

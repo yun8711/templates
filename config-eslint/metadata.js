@@ -1,54 +1,39 @@
 module.exports = [
   {
-    title: "基础配置：适用 vue2",
-    value: "vue2",
-    // 需要安装的依赖列表
-    dependencies:{
-      // 开发依赖
-      dev:'eslint @babel/eslint-parser eslint-config-prettier prettier eslint-plugin-prettier eslint-plugin-vue',
-    },
-    // 文件映射，格式：source:target
+    title: "适用 vue2",
     filesMap: {
-      "vue2.js": ".eslintrc.js",
-      _eslintignore: ".eslintignore",
+      "vue2.js": ".eslintrc.cjs",
+      "_eslintignore": ".eslintignore",
     },
-    hooks:{
-      afterInstall(shell, pwd){
-        shell.exec('npm pkg set scripts.lint:eslint="eslint --fix --ext .vue,.js,.cjs,.mjs"')
-      }
-    }
+    tips:[
+      '开发依赖：eslint @babel/eslint-parser eslint-config-prettier prettier eslint-plugin-prettier eslint-plugin-vue',
+      '添加脚本："lint:eslint":"eslint --fix --ext .vue,.js,.cjs,.mjs"',
+      'tip：可配合 lint-staged 使用'
+    ],
   },
   {
-    title: "基础配置：适用 vue3",
-    value: "vue3",
-    dependencies: {
-      dev:'eslint eslint-config-prettier eslint-plugin-jsonc eslint-plugin-prettier eslint-plugin-vue jsonc-eslint-parser prettier',
-    },
+    title: "适用 vue3",
     filesMap: {
       "vue3.js": ".eslintrc.cjs",
-      _eslintignore: ".eslintignore",
+      "_eslintignore": ".eslintignore",
     },
-    hooks:{
-      afterInstall(shell, pwd){
-        shell.exec('npm pkg set scripts.lint:eslint="eslint --fix --ext .vue,.js,.cjs,.mjs"')
-      }
-    }
+    tips:[
+      '开发依赖：eslint eslint-config-prettier eslint-plugin-jsonc eslint-plugin-prettier eslint-plugin-vue jsonc-eslint-parser prettier',
+      '添加脚本："lint:eslint":"eslint --fix --ext .vue,.js,.jsx,.cjs,.mjs"',
+      'tip：可配合 lint-staged 使用'
+    ],
   },
   {
-    title: "基础配置：适用 vue3+ts",
-    value: "vue3-ts",
-    dependencies: {
-      dev:'eslint eslint-config-prettier eslint-plugin-import eslint-plugin-jsonc eslint-plugin-prettier eslint-plugin-vue jsonc-eslint-parser prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript'
-    },
+    title: "适用 vue3+ts",
     filesMap: {
-      "vue3-ts.js": ".eslintrc.js",
-      _eslintignore: ".eslintignore",
+      "vue3-ts.js": ".eslintrc.cjs",
+      "_eslintignore": ".eslintignore",
     },
-    hooks:{
-      afterInstall(shell, pwd){
-        shell.exec('npm pkg set scripts.lint:eslint="eslint --fix --ext .vue,.ts,.tsx,.jsx,.js,.cjs,.mjs"')
-      }
-    }
+    tips:[
+      '开发依赖：eslint eslint-config-prettier eslint-plugin-import eslint-plugin-jsonc eslint-plugin-prettier eslint-plugin-vue jsonc-eslint-parser prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser typescript',
+      '添加脚本："lint:eslint":"eslint --fix --ext .vue,.ts,.tsx,.jsx,.js,.cjs,.mjs"',
+      'tip：可配合 lint-staged 使用'
+    ],
   },
   // {
   //   title: "适用 react 项目",

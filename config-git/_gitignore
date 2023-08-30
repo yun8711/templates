@@ -1,16 +1,8 @@
+# common
 node_modules/
 .DS_Store
 .history
-components.d.ts
-
-# gen icon
-svg-icon
-es 
-lib
-dist
-
-# test
-coverage
+.idea
 
 # Logs
 logs
@@ -20,8 +12,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# test
+coverage
+components.d.ts
+
 # Editor directories and files
 # package-lock.json
 # pnpm-lock.yaml
 # !.vscode/extensions.json
-# .idea/*

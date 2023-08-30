@@ -1,12 +1,12 @@
 // @see https://github.com/element-plus/element-plus/blob/dev/internal/eslint-config/index.js
 
 module.exports = {
-  root:true,
-  "env": {
-    "browser": true,
-    "es6": true,
-    "node": true,
-    "jest": true
+  root: true,
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+    jest: true,
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -23,7 +23,7 @@ module.exports = {
       jsx: true,
     },
   },
-  "globals": {
+  globals: {
     defineModel: true,
     defineProps: 'readonly',
     defineEmits: 'readonly',
@@ -117,7 +117,7 @@ module.exports = {
       },
     },
   ],
-
+  
   /**
    * "off" 或 0    ==>  关闭规则
    * "warn" 或 1   ==>  打开的规则作为警告（不影响代码执行）
@@ -126,17 +126,17 @@ module.exports = {
   rules: {
     // eslint (http://eslint.cn/docs/rules)
     'no-var': 'error', // 要求使用 let 或 const 而不是 var
-    "no-multiple-empty-lines": ["error", { max: 1 }], // 不允许多个空行
-    "no-useless-escape": "off", // 禁止不必要的转义字符,
+    'no-multiple-empty-lines': ['error', { max: 1 }], // 不允许多个空行
+    'no-useless-escape': 'off', // 禁止不必要的转义字符,
     // "no-unexpected-multiline": "error", // 禁止空余的多行
     // "prefer-const": "off", // 使用 let 关键字声明但在初始分配后从未重新分配的变量，要求使用 const
     // "no-use-before-define": "off", // 禁止在 函数/类/变量 定义之前使用它们
     // "no-redeclare": "off",
     // "no-self-assign": "off",
-
+    
     // vue (https://eslint.vuejs.org/rules)
     // "vue/require-v-for-key": 0, // 禁止在 v-for 指令中使用没有定义 key 属性的元素
-    "vue/require-explicit-emits": "off", // 要求在 emits 选项中或者 emits 属性中明确指定组件的自定义事件
+    'vue/require-explicit-emits': 'off', // 要求在 emits 选项中或者 emits 属性中明确指定组件的自定义事件
     'vue/multi-word-component-names': 'off', // 组件名必须由多个单词组成
     'vue/no-unused-vars': 'off',
     'vue/singleline-html-element-content-newline': ['off'],
@@ -185,7 +185,7 @@ module.exports = {
         },
       },
     ],
-
+    
     // eslint-plugin-import (https://www.npmjs.com/package/eslint-plugin-import)
     // analysis/correctness
     'import/no-unresolved': 'off',
@@ -193,7 +193,7 @@ module.exports = {
     'import/namespace': 'off',
     // "import/default": "error",
     // "import/export": "error",
-
+    
     // red flags (thus, warnings)
     // "import/no-named-as-default": "warn",
     // "import/no-named-as-default-member": "warn",
@@ -232,7 +232,7 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off', // 禁止使用特定类型
     // "@typescript-eslint/no-var-requires": "off", // 允许使用 require() 函数导入模块
     // "@typescript-eslint/no-empty-function": "off", // 禁止空函数
-    "@typescript-eslint/no-non-null-assertion": "off", // 不允许使用后缀运算符的非空断言(!)
+    '@typescript-eslint/no-non-null-assertion': 'off', // 不允许使用后缀运算符的非空断言(!)
     // "@typescript-eslint/semi": "off",  // 要求或禁止使用分号代替 ASI
   },
 };

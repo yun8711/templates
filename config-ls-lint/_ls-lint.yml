@@ -8,7 +8,7 @@ ls:
     .dir: kebab-case
     .vue: PascalCase
 
-# 如果没有指定工作目录，则默认为项目根目录
+# 如果没有指定工作目录，则默认为项目根目录，需要忽略以下目录
 ignore:
   - .git
   - node_modules

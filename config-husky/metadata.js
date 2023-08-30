@@ -1,35 +1,21 @@
 module.exports = [
   {
     title: '基础配置：仅安装 husky',
-    value: 'basic',
-    dependencies: {
-      dev: 'husky',
-    },
-    hooks: {
-      beforeInstall: (shell, pwd) => {
-        shell.exec('npm pkg set scripts.prepare="husky install"');
-      },
-      afterInstall: (shell, pwd) => {
-        shell.exec('npm run prepare');
-      },
-    },
+    tips:[
+      '添加脚本："prepare":"husky install"',
+      '开发依赖：husky',
+      'tip：手动添加 git hook',
+    ],
   },
   {
     title: '推荐配置：安装husky，增加hook: commit-msg、pre-commit ',
-    value: 'recommended',
-    dependencies: {
-      dev: 'husky',
-    },
     filesMap: {
-      '_husky-ly': '.husky',
+      '_husky': '.husky',
     },
-    hooks: {
-      beforeInstall: (shell, pwd) => {
-        shell.exec('npm pkg set scripts.prepare="husky install"');
-      },
-      afterInstall: (shell, pwd) => {
-        shell.exec('npm run prepare');
-      },
-    },
+    tips:[
+      '添加脚本："prepare":"husky install"',
+      '开发依赖：husky',
+      'tip：commit-msg 钩子中执行 commitlint，pre-commit 钩子中执行 lint-staged',
+    ],
   },
 ];

@@ -1,20 +1,14 @@
 module.exports = [
   {
-    title: "完整配置项",
-    value: "all",
-    // 需要安装的依赖列表
-    dependencies:{
-      dev:"prettier",
-    },
-    // 文件映射，格式：source:target
+    title: "示例",
     filesMap: {
       "all.js": ".prettierrc.cjs",
       prettierignore: ".prettierignore",
     },
-    hooks:{
-      afterInstall(shell, pwd){
-        shell.exec('npm pkg set scripts.format="prettier --write ."')
-      }
-    }
+    tips:[
+      '开发依赖：prettier',
+      '添加脚本："format":"prettier --write ."',
+      'tip：可配合 lint-staged 使用'
+    ],
   },
 ];

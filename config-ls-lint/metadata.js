@@ -1,17 +1,16 @@
 module.exports = [
   {
     title: '示例配置',
-    value: 'basic',
     dependencies:{
       global: 'ls-lint',
     },
     filesMap: {
       '_ls-lint.yml': '.ls-lint.yml',
     },
-    hooks:{
-      afterInstall(shell, pwd){
-        shell.exec('npm pkg set scripts.lint:ls="ls-lint --workdir src --warn --debug"')
-      }
-    }
+    tips:[
+      '全局依赖：@ls-lint/ls-lint',
+      '添加脚本："lint:ls":"ls-lint --workdir src --warn --debug"',
+      'tip：需要配合 pre-commit 使用',
+    ],
   },
 ];
